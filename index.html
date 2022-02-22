@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <title>The band</title>
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="header">
+            <!-- Begin nav -->
+            <ul id="nav">
+                <li onclick={hideNav()}><a href="#">Home</a></li>
+                <li onclick={hideNav()}><a href="#band">Band</a></li>
+                <li onclick={hideNav()}><a href="#tour">Tour</a></li>
+                <li onclick={hideNav()}><a href="#contact">Contact</a></li>
+                <li>
+                    <a onclick={NonReloadPage(event)} href="#">
+                        More
+                        <i class="nav-arrow-down ti-angle-down"></i>
+
+                    </a>
+                    <ul class="subnav">
+                        <li><a href="#">Merchandise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- End nav -->
+
+            <!-- Begin Search -->
+            <div id="search-btn"><i class="search-icon ti-search"></i></div>
+            <div onclick={onTurnOnOffHeader()} id="menu-btn"><i class="menu-icon ti-menu"></i></div>
+        </div>
+
+        <div id="slider">
+            <div class="slider-item active">
+                <img class="img-content" src="./assets/img/slide1.jpg" alt="New Work">
+                <div class="text-content">
+                    <h2 class="text-heading">Los Angeles </h2>
+                    <p class="text-description"> We had the best time playing at Venice Beach!</p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img class="img-content" src="./assets/img/slide2.jpg" alt="New Work">
+                <div class="text-content">
+                    <h2 class="text-heading">New York </h2>
+                    <p class="text-description">The atmosphere in New York is lorem ipsum.</p>
+                </div>
+            </div>
+            <div class="slider-item">
+                <img class="img-content" src="./assets/img/slide3.jpg" alt="New Work">
+                <div class="text-content">
+                    <h2 class="text-heading">Chicago </h2>
+                    <p class="text-description"> We had the best time playing at Venice Beach!</p>
+                </div>
+            </div>
+            <div class="slider-navigation ">
+                <div class="nav-btn "></div>
+                <div class="nav-btn"></div>
+                <div class="nav-btn"></div>
+            </div>
+        </div>
+
+        <div id="content">
+
+            <!-- About section -->
+            <div id="band" class=" section-content">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading"> We love music</p>
+                <p class="margin-content about-description">
+                    We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                    enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                </p>
+                <div class="members-list">
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img class="member-img" src="./assets/img/bandmember.jpg" alt="Vuong Minh Truc">
+                    </div>
+
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img class="member-img" src="./assets/img/bandmember.jpg" alt="Vuong Minh Truc">
+                    </div>
+
+
+                    <div class="member-item">
+                        <p class="member-name">Name</p>
+                        <img class="member-img" src="./assets/img/bandmember.jpg" alt="Vuong Minh Truc">
+                    </div>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <!-- Tour section -->
+            <div id="tour" class="tour-section">
+                <div class="section-content">
+                    <h2 class=" section-heading text-white">TOUR DATES</h2>
+
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+
+                    <ul class="tickers-list">
+                        <li>September <span class="sold-out">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <span class="quantity">3</span></li>
+                    </ul>
+
+                    <div class="country-list">
+                        <div class="country-item">
+                            <img class="country-img-item" src="./assets/img/newyork.jpg" alt="">
+                            <div class="box-text">
+                                <h5 class="country-name">New York</h5>
+                                <p class="day-mouth-year">Fri 27 Nov 2016</p>
+                                <p class="country-text-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                                </p>
+                                <button onclick={onOpenFormBuyTickets()} class="country-button-item">Buy
+                                    Tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="country-item">
+                            <img class="country-img-item" src="./assets/img/paris.jpg" alt="">
+                            <div class="box-text">
+                                <h5 class="country-name">Paris</h5>
+                                <p class="day-mouth-year">Sat 28 Nov 2016</p>
+                                <p class="country-text-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                                </p>
+                                <button onclick={onOpenFormBuyTickets()} class="country-button-item">Buy
+                                    Tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="country-item">
+                            <img class="country-img-item" src="./assets/img/sanfran.jpg" alt="">
+                            <div class="box-text">
+                                <h5 class="country-name">San Francisco</h5>
+                                <p class="day-mouth-year">Sun 29 Nov 2016</p>
+                                <p class="country-text-item">Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+                                </p>
+                                <button onclick={onOpenFormBuyTickets()} class="country-button-item">Buy
+                                    Tickets</button>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="tour-sub-list">
+
+                </div>
+
+            </div>
+
+            <!-- Contact section -->
+            <div id="contact" class="section-content">
+                <h2 class="section-heading">CONTACT</h2>
+                <p class="section-sub-heading"> Fan? Drop a note!</p>
+                <div class="contact-body">
+                    <div class="contact-list">
+                        <ul>
+                            <li><i class="contact-icon ti-location-pin"></i>Chicago, US</li>
+                            <li><i class="contact-icon ti-mobile"></i>Phone: <a href="tel:+00 151515">+00 151515</a>
+                            </li>
+                            <li><i class="contact-icon ti-email"></i>Email: <a
+                                    href="mailto:mail@mail.com">mail@mail.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-input">
+                        <div class="name-email">
+                            <div class="input-item">
+                                <input type="text" required class="name-email-item" placeholder="Name">
+                            </div>
+                            <div class="input-item">
+                                <input type="email" required class="name-email-item" placeholder="Email">
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <input type="text " required class="message" placeholder="Message">
+                    </div>
+                    <button class="contact-send ">Send</button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <div class="map-img"></div>
+        </div>
+
+        <div id="footer">
+            <div class="icon-brand">
+                <ul>
+                    <li class="ti-twitter-alt"></li>
+                    <li class="ti-linkedin"></li>
+                    <li class="ti-facebook"></li>
+                    <li class="ti-instagram"></li>
+                    <li class="ti-pinterest"></li>
+                    <li class="ti-vimeo-alt"></li>
+                </ul>
+            </div>
+            <p>Powered by <a href="#">w3.css</a></p>
+        </div>
+    </div>
+
+    <!-- Modal form tickets -->
+    <div onclick={onCloseFormBuyTickets()} class="modal">
+        <div class="container">
+            <div class="heading">
+                <p><i class="briefcase-icon ti-briefcase"></i>Tickets</p>
+                <button onclick={onCloseFormBuyTickets()}><i class="close-icon ti-close"></i></button>
+            </div>
+            <div class="body">
+                <label class="placeholder" for="ticket-quantity">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input class="input-ticket" type="text" placeholder="How many?" id="ticket-quantity">
+
+                <label class="placeholder" for="ticket-email">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input class="input-ticket" type="email" placeholder="Enter email" id="ticket-email">
+
+                <button class="pay-tickets">Pay <i class="check-icon ti-check"></i></button>
+                <button onclick={onCloseFormBuyTickets()} class="close-tickets">
+                    Close
+                    <i class="close-icon ti-close"></i>
+                </button>
+                <p class="span-help">Need <a href="#">help?</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS header -->
+    <script>
+
+        //  JS slider 
+
+        const btns = document.querySelectorAll(".nav-btn");
+        const sliders = document.querySelectorAll(".slider-item");
+
+        var sliderNav = function (manual) {
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            sliders.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+
+            btns[manual].classList.add("active");
+            sliders[manual].classList.add("active");
+
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            })
+        })
+
+        //  JS modal form tickets 
+
+        const modal = document.querySelector('.modal');
+        const modalContainer = document.querySelector('.container');
+
+        const onOpenFormBuyTickets = () => {
+            modal.classList.toggle('js-open')
+        }
+        const onCloseFormBuyTickets = () => {
+            modal.classList.remove('js-open')
+            // khi click vaò thẻ modal thì sẽ close nhưng 
+            // click vào thẻ con container thì không close
+            // sử dụng stopPropagation() tránh nỗi bọt trong thẻ html
+            modalContainer.addEventListener('click', function (event) {
+                event.stopPropagation();
+            })
+        }
+
+        // JS on off header mobile 
+        const header = document.querySelector("#header");
+        const headerHeight = header.clientHeight;
+
+
+        //JS turn on off button header
+
+        const onTurnOnOffHeader = () => {
+            var isClose = header.clientHeight === headerHeight;
+            if (isClose) {
+                header.style.height = 'auto';
+    
+            } else {
+                header.style.height = null;
+            }
+        }
+
+        //  JS Navbar
+
+        const hideNav = () => {
+            var isClose = header.clientHeight === headerHeight;
+            if (!isClose) {
+                header.style.height = null;
+            }
+        }
+        const NonReloadPage = (event) => {
+            event.preventDefault();
+        }
+
+        const nav = document.querySelector("#nav");
+        const btn = document.querySelector("#search-btn");
+        const slider = document.querySelector("#slider");
+        window.onscroll = () => {
+            if (window.pageYOffset > header.offsetTop) {
+                header.classList.add("sticky");
+                nav.classList.add("sticky");
+                btn.classList.add("sticky");
+                slider.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+                nav.classList.remove("sticky");
+                btn.classList.remove("sticky");
+                slider.classList.remove("sticky");
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

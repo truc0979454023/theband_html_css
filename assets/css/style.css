@@ -1,0 +1,673 @@
+/* Reset css */
+*{
+    padding: 0;
+    margin: 0;
+    /* tự canh khích thước khi có padding và border cho hợp với  kích thước đầu */
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
+}
+/* Nguyên tắc làm việc 
+1. Từ ngoài vào trong
+2. Từ trên xuống dưới
+3. Làm tổng quan tới chi tiết
+*/
+
+/* Thứ cần quan tâm
+1. Vị trí của nó
+2. Kích thước
+3. Màu sắc 
+4. Kiểu dáng
+*/
+.clear{
+    /* Loại bỏ vấn đề 1 bao phần tử con khi dùn float:left; */
+    clear: both;
+}
+
+.text-white{
+    color: #fff !important;
+}
+
+#main {
+    
+}
+
+
+/* Header */
+#header {
+    height: 60px;
+    background: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+}
+
+#nav{
+    /* mất tính kế thừa lấy 100% chiều dài của thẻ cha của thẻ div */
+    display: inline-block;   
+    line-height: 60px;
+}
+
+#nav > li{
+    /* inline-block kế thừa chiều dài và rộng của thẻ cha */
+    display: inline-block;
+}
+
+#nav li{
+    list-style-type: none;
+}
+
+#nav .nav-arrow-down{
+    width: 12px;
+    height: 14px;
+}
+/* chỉ có thẻ a là con trực tiếp của li là thẻ con trực tiếp của nav */
+#nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+/* tất cả thẻ a con của thẻ li con của nav */
+#nav li a{ 
+    text-decoration: none;
+    /* canh giữa chữ theo chiều cao */
+    line-height: 60px;
+    padding: 0 24px;
+    display: block;
+    transition: all 0.4s ease-in-out;
+
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav li:hover a,
+#nav >li:hover >a{
+    color: #000;
+    background: #ccc;
+} 
+
+#nav li:hover a{
+    position: relative;
+}
+#nav .subnav{
+    display: none;
+    min-width: 160px;
+    position: absolute;
+    /* top: 100%;
+    left: 0; */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) ;
+}
+
+#nav .subnav a{
+    line-height: 38px;
+    padding: 0 12px;
+    color: #000;
+}
+
+#search-btn{
+    height: 60px;
+    box-sizing: border-box;
+    padding: 0 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    line-height: 60px;
+    transition: all 0.4s ease-in-out;
+    
+}
+
+#menu-btn{
+    height: 46px;
+    box-sizing: border-box;
+    padding: 0 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
+#search-btn:hover{
+    background: red;
+}
+
+#menu-btn:hover {
+    background: #ccc;
+}
+
+#menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#menu-btn .menu-icon,
+#search-btn .search-icon{
+    color: #fff;
+    line-height: 46px;
+    /* Thay đổi chuột khi trỏ vào pointer là ngón tay */
+    cursor: pointer;
+}
+
+
+/* Slide */
+#slider {
+    margin-top: 60px;
+    position: relative;
+    transition: all 0.4s ease-in-out;
+
+    /* padding có % thì lấy chiều dài bằng % chiều rộng */
+    /* padding-top: 50%; */
+    /* background: url(/assets/img/slide1.jpg) top center/ cover no-repeat; */
+}
+
+#slider .slider-item{
+    position: relative;
+    display: none;
+}
+#slider .slider-item.active{
+    display: block;
+}
+
+#slider .img-content{
+    width: 100%;
+    display: block;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 100px;
+    /* căn giữa ở đầu dòng */
+    /* left: 50%; */
+    /* căn giữa từ giữa dòng */
+    /* transform: translateX(-50%); */
+    /* cách này cũng đc */
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0px 2px 2px black;
+}
+
+#slider .text-heading{
+    font-weight: 400;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#slider .text-description{
+    font-size: 15px;
+    font-weight: 600 ;
+}
+
+.slider-navigation{
+    z-index: 888;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+.slider-navigation .nav-btn{
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(34, 33, 33, 0.5);
+    transition: 0.3s ease;
+  }
+  
+.slider-navigation .nav-btn.active{
+    background: grey;
+  }
+  
+.slider-navigation .nav-btn:not(:last-child){
+  margin-right: 20px;
+  }
+  
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+  }
+  
+
+/* content */
+
+#content {
+
+}
+
+
+#content .section-content{
+    width: 800px;
+    max-width: 100%;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 4px;
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-style: italic;
+    opacity: 0.6;
+}
+#content .about-description{
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4 ;
+}
+
+#content .members-list{
+    margin-top: 48px;
+    padding-bottom: 32px;
+}
+
+#content .member-item{
+    /* kéo thẻ div sàn trái thành 1 hành */
+    float: left;
+    width: calc(100%/3);
+    text-align: center;
+}
+
+#content .member-name{
+    font-size: 15px;
+
+}
+
+#content .member-img{
+    margin-top: 15px;
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* Tour section */
+
+#content .tour-section{
+    background: #000;
+    padding-bottom: 32px;
+}
+
+#content .tickers-list{
+    background: #fff;
+    margin-top: 40px;
+    position: relative;
+}
+
+.tickers-list li{
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ccc;
+    color: #757575;
+    list-style: none;
+}
+
+.tickers-list .sold-out{
+    margin-left: 16px;
+    background: rgb(247, 56, 56);
+    color: #fff;
+    padding: 2px 8px;
+}
+
+.tickers-list .quantity{
+    width: 28px;
+    height: 24px;
+    position: absolute;
+    right: 32px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+    text-align:center;
+    font-size: 16px;
+    line-height: 24px ;
+    margin-top: -3px;
+}
+
+.country-list{
+    margin-top: 40px;
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.country-list .country-item{
+    float: left;
+    width: calc(100%/3) ;
+    padding: 0 8px;
+    box-sizing: padding-box;
+    margin-bottom: 16px;
+}
+
+.country-list .country-img-item{
+    width: 100%; 
+    display: block;
+      
+}
+
+.country-list .country-img-item:hover{
+    opacity: 0.7;
+      
+}
+
+.country-list .box-text{
+    background: #fff;
+    padding: 16px;
+    font-size: 15px;
+}
+
+.country-list .country-name{
+    font-weight: 600;
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.country-list .day-mouth-year{
+    color:#757575 ;
+    margin: 15px 0;
+}
+
+.country-list .country-text-item{
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
+.country-list .country-button-item{
+   padding: 8px 16px;
+   background: #000;
+   color: #fff;
+   border-style: none;
+   line-height: 22px;
+   font-size: 15px;
+}
+
+.country-list .country-button-item:hover{
+    background: #ccc;
+    color: #000;
+}
+
+/* Form tickers Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.js-open{
+    display: flex;
+}
+
+.modal .container{
+    margin: 0 auto;
+    width: 900px;
+    background: #fff;
+    margin: 0 120px;
+    /* chuyền chuyển động từ keyframes , ease kiểu chuyển động, 0.3 time chuyển động vào thẻ */
+    animation: modalFadeIn ease 0.5s ;
+}
+
+.modal .heading{
+    height: 128px;
+    background: #009688;
+    position: relative;
+}
+
+.modal .heading p{
+    color: #fff;
+    font-size: 30px ;
+    font-family: 400;
+    letter-spacing: 4px;
+    text-align: center;
+    line-height: 128px;
+    list-style: none;
+}
+
+.modal .briefcase-icon{
+    margin-right: 16px;
+}
+
+.modal .heading button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #009688 ;
+    border-style: none;
+    color: #fff;
+    width: 46px;
+    height: 52px;
+    text-align: center;
+    line-height: 52px ;   
+}
+
+.modal .heading button:hover{
+    background: rgb(235, 48, 48);
+}
+
+.modal .body{
+    margin: 15px;
+}
+
+.modal .placeholder{
+    line-height: 1.5;
+}
+
+.modal .input-ticket{
+    width:100% ;
+    padding: 8px;
+    font-size: 16px;
+    margin:8px 0 16px;
+}
+
+.modal .pay-tickets{
+    width: 100%;
+    height: 54px;
+    background: #009688;
+    border-style: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 16px 0;
+}
+
+.modal .pay-tickets:hover{
+    background: rgb(6, 126, 167);
+}
+
+.modal .pay-tickets .check-icon{
+    font-weight: 900;
+}
+
+.modal .close-tickets{
+    background: #f44336 ;
+    height: 38px;
+    width: 84px;
+    border-style: none;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 16px;
+    font-size: 16px;
+}
+
+.modal .close-tickets:hover{
+    background: red;
+}
+
+.modal .close-icon{
+    font-weight: 900;
+}
+
+.modal .body .span-help{
+    float: right;
+    margin: 16px 0;
+}
+
+.modal .body .span-help a{
+    color: #2196F3 ;
+}
+
+.section-content .contact-body{
+    margin-top: 32px;
+    box-sizing: border-box;
+    margin-bottom: 32px;
+    padding-bottom: 40px;
+}
+
+.contact-list {
+    list-style: none;
+    float: left;
+    width: 50%;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-list li{
+    list-style: none;
+}
+
+.contact-list li a{
+    color: #3737f2;
+    opacity: 0.8;
+}
+
+.contact-list li a:hover{
+    opacity: 1;
+}
+
+.contact-list li .contact-icon{
+    margin-right: 12px;
+}
+
+.contact-body .contact-input{
+    font-size: 16px;
+    width: 50%;
+    float: left;
+    padding-bottom: 16px;
+    border-style: 1px solid #ccc;
+}
+
+.contact-input .name-email{
+    margin-bottom: 8px;
+    margin-left:  -8px;
+    margin-right:  -8px;
+}
+
+.contact-input .input-item{
+   float: left;
+   width: 50%;
+   padding: 0 8px;
+}
+
+.contact-input .name-email-item{
+    padding: 8px;
+    width: 100%;
+}
+
+.contact-input .message{
+    padding: 8px;
+    width: 100%;
+}
+
+.section-content .contact-send{
+    float: right;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    background: #000;
+    color: #fff;
+    border-style: none;
+}
+
+.section-content .contact-send:hover{
+    background: #ccc;
+    color: #000;
+}
+
+#content .map-img{
+    padding-top: calc((486/863)*100%);
+    background: linear-gradient(0,rgba(255, 255, 255, 0.2),rgba(255,255,255,0.2)),
+    url(/assets/img/map.jpg)bottom center/ cover no-repeat ;
+}
+
+#footer {
+    padding: 64px 16px ;
+    text-align: center;
+    color: #000 ;
+    opacity: 0.6;
+}
+
+#footer ul{
+    margin-bottom: 32px;
+    font-size: 24px;
+}
+
+#footer ul li{
+    list-style: none;
+    display: inline-block;
+}
+
+#footer ul li:hover{
+    opacity: 0.7;
+}
+
+#footer p a{
+    color: #000 ;
+}
+
+
+/* Tạo chuyển động từ hình tĩnh */
+@keyframes modalFadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+
+    }
+}
+
+@keyframes sliderImg {
+    from{
+        display: block;
+    }
+    to{
+        display: none;
+
+    }
+}
+
+
+/* Media Break */
+
+/* tablet */
+@media (max-w) {
+    
+}

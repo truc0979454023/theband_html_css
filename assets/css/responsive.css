@@ -1,0 +1,133 @@
+@media (min-width:46.1875em) {
+    #header.sticky {
+        height: 46px;
+        border-bottom: 1px solid grey;
+        box-shadow: 0 0 10px rgb(85, 84, 84); 
+    }
+    #nav  {
+        line-height: 46px;
+    }
+    #nav.sticky li a{
+        line-height: 46px;
+    }
+    #search-btn.sticky{
+        height: 46px;
+        line-height: 46px;
+    }
+    #slider.sticky{
+        margin-top: 46px;
+    }
+}
+
+
+@media (max-width:63.9375em) {
+    .country-list .country-button-item{
+        padding: 16px;
+    }
+    .modal .close-tickets{
+        height: 48px;
+        width: 96px;
+    }
+    .section-content .contact-send {
+        padding: 18px 28px;
+    }
+    .tickers-list li {
+        padding: 16px;
+    }
+     
+    .slider-navigation{
+        bottom: 0;
+    }
+
+    .slider-navigation .nav-btn:not(:last-child){
+        margin-right: 36px;
+    }
+    .contact-list {
+        line-height: 2;
+    }
+    .modal .input-ticket,
+    .contact-input .name-email-item ,
+    .contact-input .message{
+        padding: 16px;
+    }
+
+}
+
+
+@media (max-width: 46.1875em){
+    #header {
+        overflow: hidden;
+    }
+    #nav{
+        display: block;
+        line-height: 60px;
+    }
+    #nav > li {
+        display: block;
+    }
+    #nav > li:first-child{
+        display: inline-block;
+    }
+    #nav .subnav{
+        position: initial;
+        background: #333;
+    }
+    #nav .subnav a{
+        color: #fff;
+        padding: 5px 60px;
+    }
+    #search-btn{
+        display: none;
+    }
+    #slider .text-content{
+        display: none;
+    }
+    #menu-btn{
+        display: block;
+        line-height: 60px;
+        height: 60px;
+    }
+    #content .member-item{
+        width: 100%;
+        margin-top:32px ;
+    }
+    #content .member-img{
+        width: 60%;
+    }
+
+    .modal .container {
+        margin: 0 16px;
+    }
+    .contact-body .contact-input {
+        padding-top: 28px;
+    }
+
+    #footer ul li {
+        margin-left: 12px;
+    }
+   
+ }
+
+ @media (max-width: 37.4375em){
+    .country-list .country-item{
+        width: 100%;
+    }
+    .country-list .country-img-item{
+        width: 100%;
+    }
+    .country-list .country-button-item,
+    .section-content .contact-send{
+        width: 100%;
+    }
+    .contact-list{
+        width: 100%;
+    }
+    .contact-body .contact-input{
+        width: 100%;
+
+    }
+    .contact-input .input-item{
+        padding: 8px;
+        width: 100%;
+    }
+ }
